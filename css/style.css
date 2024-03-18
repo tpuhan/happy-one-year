@@ -52,11 +52,11 @@ body {
     padding-bottom: 50px; /* Add more padding at the bottom */
     font-family: 'Annie Use Your Telescope', cursive;
     font-size: 22px; /* Increase font size */
-    line-height: 1.4; /* Adjust line height for better readability */
+    line-height: 1.0; /* Adjust line height for better readability */
 }
 
 #messages p {
-    margin-bottom: -3px; /* Adjust as needed */
+    margin-bottom: -10px; /* Adjust as needed */
 }
 
 /* Slideshows Container */
@@ -115,11 +115,16 @@ body {
 /* Adjustments for Happy One Year and Our Journey */
 #hero .hero-content h1 {
     font-family: 'Brush Script MT', cursive; /* Change font family to Brush Script */
-    font-size: 36px; /* Increase font size */
-    margin-bottom: 5px; /* Reduce margin-bottom */
+    font-size: 50px; /* Increase font size */
+    margin-bottom: -4px; /* Reduce margin-bottom */
 }
 
 #timeline h2 {
     font-size: 24px; /* Increase font size */
     margin-top: 5px; /* Reduce margin-top */
+}
+
+#hero .hero-content h1,
+#timeline h2 {
+    font-family: 'Nabla', sans-serif;
 }
