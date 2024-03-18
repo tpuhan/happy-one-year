@@ -82,3 +82,20 @@ body {
         grid-template-columns: 1fr; /* Single column layout on smaller screens */
     }
 }
+
+.slideshow-container {
+    display: flex;
+    justify-content: center; /* Center slideshow images */
+    align-items: center; /* Vertically align */
+    overflow: hidden; /* Hide parts of images that exceed container size */
+    width: 400px; /* Set width of slideshow container */
+    height: 600px; /* Set height of slideshow container */
+    margin: auto; /* Center the slideshow container if inside a larger div */
+}
+
+/* Slideshow Images */
+.slideshow-container .mySlides img {
+    width: 400px; /* Explicit width for images */
+    height: 600px; /* Explicit height for images */
+    object-fit: cover; /* Cover ensures that aspect ratios are maintained while filling the element */
+}
