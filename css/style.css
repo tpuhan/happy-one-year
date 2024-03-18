@@ -101,12 +101,11 @@ body {
 }
 
 /* Slideshow Container */
-.slideshow-container {
-    width: 100%; /* Full width of its parent */
-    height: 600px; /* Fixed height for slideshows */
-    margin: auto;
-    position: relative; /* For absolute positioning of images */
-    overflow: hidden;
+slideshow-container {
+    width: 100%; /* Adjust the width as needed */
+    height: 600px; /* Adjust the height as needed */
+    position: relative; /* For absolute positioning of slides */
+    overflow: hidden; /* Hide overflow */
 }
 
 /* Slideshow Images */
@@ -114,9 +113,12 @@ body {
     position: absolute; /* Absolute positioning to overlap slides */
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* Scale down to fit without stretching, will leave empty space if aspect ratio differs */
+    margin: auto; /* Center the image within the container */
 }
 
 /* Message Section */

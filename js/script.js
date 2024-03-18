@@ -1,24 +1,28 @@
-function startSlideshow(slideshowClass) {
-    let slideIndex = 0;
-    showSlides();
+// Function to start a slideshow given a selector for the container
+function startSlideshow(slideshowSelector) {
+    let slideIndex = 0; // Initialize slideIndex to 0 for each slideshow
 
     function showSlides() {
-        let slides = document.querySelectorAll(slideshowClass + ' .mySlides');
+        let slides = document.querySelectorAll(slideshowSelector + ' .mySlides');
         for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
+            slides[i].style.display = "none"; // Hide all slides
         }
         slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}
-        slides[slideIndex-1].style.display = "block";
-        setTimeout(showSlides, 4000); // Change image every 4 seconds
+        if (slideIndex > slides.length) {slideIndex = 1} // Loop back to the first slide
+        slides[slideIndex-1].style.display = "block"; // Show the current slide
+        setTimeout(showSlides, 4000); // Change slide every 4 seconds
     }
+
+    showSlides(); // Call showSlides function to start the slideshow
 }
 
-// Start both slideshows
-startSlideshow("#slideshow-us-together");
-startSlideshow("#slideshow-my-fav-pics");
+// Initiate both slideshows when the document is fully loaded
+document.addEventListener('DOMContentLoaded', (event) => {
+    startSlideshow("#slideshow-us-together");
+    startSlideshow("#slideshow-my-fav-pics");
+});
 
-// Function to check if an element is in viewport
+// Function to check if an element is in the viewport
 function isInViewport(element) {
     const rect = element.getBoundingClientRect();
     return (
@@ -34,34 +38,9 @@ document.addEventListener('scroll', function () {
     const sections = document.querySelectorAll('.animate-title, .animate-subtitle, .timeline-item, #messages, #gallery .gallery-grid img');
     sections.forEach((section) => {
         if (isInViewport(section)) {
-            section.classList.add('active');
+            section.classList.add('active'); // Add 'active' class if in viewport
         } else {
-            section.classList.remove('active');
+            section.classList.remove('active'); // Remove 'active' class if not in viewport
         }
     });
 });
-
-// Simple Slideshow Functionality
-let slideIndex = 0; // Start with the first slide
-
-// Function to show the next slide in the slideshow
-function showSlides() {
-    let slides = document.getElementsByClassName("mySlides");
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1} // Loop back to the first slide
-    slides[slideIndex-1].style.display = "block";
-    setTimeout(showSlides, 4000); // Change image every 4 seconds
-}
-
-// Call showSlides function to initiate the slideshow
-document.addEventListener('DOMContentLoaded', (event) => {
-    showSlides();
-});
-
-
-
-// Ensure to add the 'mySlides' class to each slideshow image or container in your HTML
-
