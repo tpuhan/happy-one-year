@@ -51,12 +51,12 @@ body {
     margin: 20px 0;
     padding-bottom: 50px; /* Add more padding at the bottom */
     font-family: 'Annie Use Your Telescope', cursive;
-    font-size: 18px; /* Increase font size */
+    font-size: 22px; /* Increase font size */
     line-height: 1.4; /* Adjust line height for better readability */
 }
 
 #messages p {
-    margin-bottom: 10px; /* Adjust as needed */
+    margin-bottom: -3px; /* Adjust as needed */
 }
 
 /* Slideshows Container */
