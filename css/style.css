@@ -71,6 +71,7 @@ body {
     flex: 1; /* Allow the slideshows to grow and take up equal space */
     margin: 0 10px; /* Added margin between slideshows */
     text-align: center;
+    border: 2px solid #000; /* Black border */
 }
 
 .slideshow h2 {
