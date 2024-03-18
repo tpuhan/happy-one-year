@@ -11,7 +11,7 @@ body {
 /* Hero Section */
 #hero {
     background: url('../images/hero.jpg') no-repeat center center/cover;
-    background-position: center 80%; /* Move image down slightly */
+    background-position: center 20%;
     color: #fff;
     height: 100vh;
     display: flex;
@@ -103,4 +103,16 @@ body {
     .slideshow {
         margin-bottom: 20px; /* Space between slideshows on smaller screens */
     }
+}
+
+/* Adjustments for Happy One Year and Our Journey */
+#hero .hero-content h1 {
+    font-family: 'Brush Script MT', cursive; /* Change font family to Brush Script */
+    font-size: 36px; /* Increase font size */
+    margin-bottom: 5px; /* Reduce margin-bottom */
+}
+
+#timeline h2 {
+    font-size: 24px; /* Increase font size */
+    margin-top: 5px; /* Reduce margin-top */
 }
