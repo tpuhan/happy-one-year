@@ -105,3 +105,33 @@ img {
     height: auto; /* Maintains the aspect ratio */
     border-radius: 5px;
 }
+
+/* Improved styling for images to maintain aspect ratio */
+.image-container {
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* This will ensure the image covers the area, you might lose some parts of the image */
+}
+
+/* Specific styles for timeline and gallery sections */
+#timeline .timeline-item, #gallery .gallery-grid div {
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    position: relative;
+    background-size: cover;
+}
+
+#timeline .timeline-item img, #gallery .gallery-grid img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
