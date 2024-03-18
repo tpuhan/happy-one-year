@@ -24,6 +24,7 @@ body {
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    background-position: center 60%; /* Adjust the vertical position to 60% */
 }
 
 .hero-content {
