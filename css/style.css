@@ -83,19 +83,34 @@ body {
     }
 }
 
+/* Slideshow Container */
 .slideshow-container {
     display: flex;
-    justify-content: center; /* Center slideshow images */
-    align-items: center; /* Vertically align */
-    overflow: hidden; /* Hide parts of images that exceed container size */
-    width: 400px; /* Set width of slideshow container */
-    height: 600px; /* Set height of slideshow container */
-    margin: auto; /* Center the slideshow container if inside a larger div */
+    flex-direction: column; /* Align items vertically */
+    justify-content: center; /* Center content vertically */
+    width: 400px; /* Width of slideshow */
+    height: 600px; /* Height of slideshow */
+    margin: auto; /* Center the container */
+    overflow: hidden; /* Hide overflow */
 }
 
 /* Slideshow Images */
 .slideshow-container .mySlides img {
-    width: 400px; /* Explicit width for images */
-    height: 600px; /* Explicit height for images */
-    object-fit: cover; /* Cover ensures that aspect ratios are maintained while filling the element */
+    width: 100%; /* Make the image fill the container width */
+    height: 100%; /* Make the image fill the container height */
+    object-fit: cover; /* Cover ensures images are cropped to fit */
+}
+
+/* Content Container Styling */
+.content-container {
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center children horizontally */
+    align-items: start; /* Align items to the start of the flex container */
+    gap: 20px; /* Space between slideshow and message section */
+}
+
+/* Message Section Styling */
+.message-section {
+    flex: 1; /* Allow the message section to fill the available space */
+    padding: 20px; /* Optional padding */
 }
