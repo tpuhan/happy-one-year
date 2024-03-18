@@ -18,8 +18,8 @@ function startSlideshow(slideshowSelector) {
 
 // Initiate both slideshows when the document is fully loaded
 document.addEventListener('DOMContentLoaded', (event) => {
-    startSlideshow("#slideshow-us-together");
-    startSlideshow("#slideshow-my-fav-pics");
+    startSlideshow("#slideshow-us-together .slideshow-container");
+    startSlideshow("#slideshow-my-fav-pics .slideshow-container");
 });
 
 // Function to check if an element is in the viewport

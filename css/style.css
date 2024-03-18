@@ -8,30 +8,23 @@ body {
     color: #333;
 }
 
-/* Container */
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
-
 /* Hero Section */
 #hero {
     background: url('../images/hero.jpg') no-repeat center center/cover;
+    background-position: center 60%; /* Move image down slightly */
     color: #fff;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    background-position: center 60%; /* Adjust the vertical position to 60% */
 }
 
 .hero-content {
     margin: 0 20px;
 }
 
-/* Timeline */
+/* Timeline Section */
 #timeline {
     background: #fff;
     color: #333;
@@ -40,16 +33,15 @@ body {
 }
 
 .timeline-item {
-    margin-bottom: 20px;
-    overflow: hidden; /* Ensures images are cropped */
-    height: 750px; /* Fixed height for cropping */
+    overflow: hidden;
+    height: 750px;
 }
 
 .timeline-item img {
-    width: auto; /* Adjust width to maintain aspect ratio */
-    min-width: 100%; /* Ensure coverage */
-    height: 100%; /* Fixed height for consistent size */
-    object-fit: cover; /* Crop to cover the container */
+    width: auto;
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Messages Section */
@@ -57,85 +49,58 @@ body {
     background: #eee;
     padding: 20px;
     margin: 20px 0;
-}
-
-/* Gallery */
-#gallery .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 15px;
-    margin-top: 20px;
-}
-
-#gallery .gallery-grid div {
-    overflow: hidden; /* Crop images to fit */
-    aspect-ratio: 4 / 3; /* Maintain aspect ratio for gallery images */
-}
-
-#gallery .gallery-grid img {
-    width: 100%; /* Full width of the container */
-    height: auto; /* Adjust height to maintain aspect ratio */
-    object-fit: cover; /* Crop to cover the container */
-}
-
-@media (max-width: 768px) {
-    #gallery .gallery-grid {
-        grid-template-columns: 1fr; /* Single column layout on smaller screens */
-    }
+    padding-bottom: 50px; /* Add more padding at the bottom */
 }
 
 /* Slideshows Container */
 .slideshows-container {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 20px; /* Space below the slideshows */
+    margin: 0 20px 20px; /* Added padding to the sides of the slideshows */
 }
 
 /* Individual Slideshow Styling */
 .slideshow {
-    flex-basis: 50%; /* Each slideshow takes up half the width */
-    text-align: center; /* Center the captions and images */
+    flex: 1; /* Allow the slideshows to grow and take up equal space */
+    margin: 0 10px; /* Added margin between slideshows */
+    text-align: center;
 }
 
 .slideshow h2 {
-    margin-bottom: 10px; /* Space between caption and images */
+    margin-bottom: 10px;
 }
 
 /* Slideshow Container */
-slideshow-container {
-    width: 100%; /* Adjust the width as needed */
-    height: 600px; /* Adjust the height as needed */
-    position: relative; /* For absolute positioning of slides */
-    overflow: hidden; /* Hide overflow */
+.slideshow-container {
+    width: 100%;
+    height: 600px; /* Set a fixed height for the slideshow */
+    position: relative;
+    overflow: hidden;
 }
 
 /* Slideshow Images */
-.slideshow-container .mySlides img {
-    position: absolute; /* Absolute positioning to overlap slides */
+.slideshow-container .mySlides {
+    position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
     height: 100%;
-    object-fit: contain; /* Scale down to fit without stretching, will leave empty space if aspect ratio differs */
-    margin: auto; /* Center the image within the container */
 }
 
-/* Message Section */
-#messages {
-    /* Other styling remains the same */
-    padding-bottom: 50px; /* Add more padding at the bottom */
+.slideshow-container .mySlides img {
+    width: auto;
+    height: 100%;
+    object-fit: contain; /* Keep the original aspect ratio */
 }
 
-/* Adjustments for responsive design */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
     .slideshows-container {
         flex-direction: column;
     }
 
     .slideshow {
-        flex-basis: 100%; /* Each slideshow takes the full width on smaller screens */
-        margin-bottom: 20px; /* Space between the two slideshows */
+        margin-bottom: 20px; /* Space between slideshows on smaller screens */
     }
 }
