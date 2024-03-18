@@ -26,3 +26,17 @@
         opacity: 1;
     }
 }
+
+/* Update these animations with .active class for triggering */
+
+.animate-title, .animate-subtitle, .timeline-item, #messages p, #gallery .gallery-grid img {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-out;
+}
+
+/* When the elements become active, they transition into view */
+.active {
+    opacity: 1;
+    transform: translateY(0);
+}
