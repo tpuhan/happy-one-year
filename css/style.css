@@ -40,11 +40,15 @@ body {
 
 .timeline-item {
     margin-bottom: 20px;
+    overflow: hidden; /* Ensures images are cropped */
+    height: 750px; /* Fixed height for cropping */
 }
 
 .timeline-item img {
-    width: 100%;
-    border-radius: 5px;
+    width: auto; /* Adjust width to maintain aspect ratio */
+    min-width: 100%; /* Ensure coverage */
+    height: 100%; /* Fixed height for consistent size */
+    object-fit: cover; /* Crop to cover the container */
 }
 
 /* Messages Section */
@@ -62,76 +66,19 @@ body {
     margin-top: 20px;
 }
 
+#gallery .gallery-grid div {
+    overflow: hidden; /* Crop images to fit */
+    aspect-ratio: 4 / 3; /* Maintain aspect ratio for gallery images */
+}
+
 #gallery .gallery-grid img {
-    width: 100%;
-    border-radius: 5px;
+    width: 100%; /* Full width of the container */
+    height: auto; /* Adjust height to maintain aspect ratio */
+    object-fit: cover; /* Crop to cover the container */
 }
 
 @media (max-width: 768px) {
     #gallery .gallery-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Single column layout on smaller screens */
     }
-}
-
-/* General Image Styling */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Specific Adjustments for Uniform Sizes */
-/* Assuming you want all images to maintain a specific aspect ratio, such as 16:9 */
-.image-wrapper {
-    width: 100%; /* Adjust this as needed */
-    overflow: hidden;
-    position: relative;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio */
-}
-
-.image-wrapper img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the image covers the padding area */
-}
-
-/* Adjustments for Timeline and Gallery Images */
-#timeline .timeline-item img, #gallery .gallery-grid img {
-    display: inline-block;
-    width: 100%; /* Ensures the image takes the full width of its container */
-    height: auto; /* Maintains the aspect ratio */
-    border-radius: 5px;
-}
-
-/* Improved styling for images to maintain aspect ratio */
-.image-container {
-    display: inline-block;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.image-container img {
-    width: 100%;
-    height: auto;
-    object-fit: cover; /* This will ensure the image covers the area, you might lose some parts of the image */
-}
-
-/* Specific styles for timeline and gallery sections */
-#timeline .timeline-item, #gallery .gallery-grid div {
-    width: 100%;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio */
-    position: relative;
-    background-size: cover;
-}
-
-#timeline .timeline-item img, #gallery .gallery-grid img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
 }

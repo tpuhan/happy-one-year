@@ -22,21 +22,23 @@ document.addEventListener('scroll', function () {
 });
 
 // Simple Slideshow Functionality
-let slideIndex = 0;
+let slideIndex = 0; // Start with the first slide
+
+// Function to show the next slide in the slideshow
 function showSlides() {
-    let slides = document.querySelectorAll('.mySlides');
+    let slides = document.getElementsByClassName("mySlides");
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";  
     }
     slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}    
-    slides[slideIndex-1].style.display = "block";  
+    if (slideIndex > slides.length) {slideIndex = 1} // Loop back to the first slide
+    slides[slideIndex-1].style.display = "block";
     setTimeout(showSlides, 4000); // Change image every 4 seconds
 }
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    showSlides(); // Call slideshow function on page load
-});
+// Call showSlides function to initiate the slideshow
+showSlides();
+
 
 // Ensure to add the 'mySlides' class to each slideshow image or container in your HTML
 
