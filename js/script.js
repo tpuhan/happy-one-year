@@ -37,7 +37,10 @@ function showSlides() {
 }
 
 // Call showSlides function to initiate the slideshow
-showSlides();
+document.addEventListener('DOMContentLoaded', (event) => {
+    showSlides();
+});
+
 
 
 // Ensure to add the 'mySlides' class to each slideshow image or container in your HTML
